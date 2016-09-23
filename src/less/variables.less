@@ -4,6 +4,9 @@
 @bigGap: 4 * @smallGap; // 32px
 
 @teaserHeight: @bigGap + @smallGap; // 40px
+@teaserOpenWidth: 4 * @bigGap + @mediumGap; // 144px;
+
+@contentMinHeight: 3 * @bigGap; // 96px;
 
 // COLORS
 @lightGrey: rgb(248, 248, 248);
@@ -15,4 +18,5 @@
 @focusColor: @darkRed;
 
 // MISC
-@transitionProps: ~".3s ease";
+@focusProps: ~"@{focusColor} auto 2px";
+@transitionProps: ~".6s ease";

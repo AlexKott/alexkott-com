@@ -1,28 +1,55 @@
 @import 'variables';
 
-.list-item__teaser {
-    display: block;
-    height: @teaserHeight;
+.list-item {
     width: 100%;
-    padding: 0 @smallGap;
+    padding: 0 @mediumGap;
 
-    background-color: @darkGrey;
-    border: 0;
-    -webkit-appearance: none;
+    &__teaser {
+        position: relative;
+        z-index: 20;
+        display: block;
+        height: @teaserHeight;
+        width: ~"calc(100% + @{bigGap})";
+        margin: 0 -@mediumGap;
+        padding: 0 @smallGap;
 
-    line-height: @teaserHeight;
-    text-align: left;
-    color: @white;
+        background-color: @darkGrey;
+        border: 0;
+        -webkit-appearance: none;
 
-    transition: width @transitionProps;
+        line-height: @teaserHeight;
+        text-align: left;
+        color: @white;
 
-    &:focus {
-        outline: @focusColor auto 2px;
+        transition: width @transitionProps;
+
+        &:focus {
+            outline: @focusProps;
+        }
+        &:hover, &:active {
+            background-color: @mediumGrey;
+        }
+        .list-item--open & {
+            width: @teaserOpenWidth;
+        }
     }
-    &:hover, &:active {
-        background-color: @mediumGrey;
+    &__container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-height: 0;
+        margin-top: -1/2 * @teaserHeight;
+        overflow: hidden;
+
+        background-color: @white;
+
+        transition: max-height @transitionProps;
+
+        .list-item--open & {
+            max-height: 400px; // TODO: this should control the transition speed.
+        }
     }
-    &--open {
-        width: 140px;
+    &__content {
+        padding: @bigGap @mediumGap @mediumGap;
     }
 }
