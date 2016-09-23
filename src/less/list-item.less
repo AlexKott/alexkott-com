@@ -1,0 +1,28 @@
+@import 'variables';
+
+.list-item__teaser {
+    display: block;
+    height: @teaserHeight;
+    width: 100%;
+    padding: 0 @smallGap;
+
+    background-color: @darkGrey;
+    border: 0;
+    -webkit-appearance: none;
+
+    line-height: @teaserHeight;
+    text-align: left;
+    color: @white;
+
+    transition: width @transitionProps;
+
+    &:focus {
+        outline: @focusColor auto 2px;
+    }
+    &:hover, &:active {
+        background-color: @mediumGrey;
+    }
+    &--open {
+        width: 140px;
+    }
+}

@@ -45,7 +45,7 @@ gulp.task('lint', () => {
 });
 
 gulp.task('less', () => {
-    return gulp.src('src/less/main.less')
+    return gulp.src('src/less/style.less')
         .pipe(less({
             plugins: [autoprefix]
         }))
