@@ -31,7 +31,7 @@
 
         font-size: @pageSwitchHeight - @mediumGap; // svg-size
         text-align: center;
-        line-height: @pageSwitchHeight + @smallGap;
+        line-height: @pageSwitchHeight + 4px; // adjust to svg size
 
         color: @lightGrey;
         background-color: @darkGrey;
@@ -48,9 +48,9 @@
             height: @pageSwitchHeight - @mediumGap;
             width: @pageSwitchHeight - @mediumGap;
             margin: @mediumGap;
-            
+
             font-size: @pageSwitchHeight - @bigGap;
-            line-height: @pageSwitchHeight - @smallGap - 4px; // adjust to svg size
+            line-height: @pageSwitchHeight - @mediumGap;
 
             &:first-child {
                 top: 0;
