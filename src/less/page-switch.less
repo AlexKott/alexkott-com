@@ -1,0 +1,29 @@
+.page-switch {
+    height: @pageSwitchHeight + @mediumGap;
+    width: 100%;
+    padding: @smallGap 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: @white;
+
+    &__item {
+        height: @pageSwitchHeight;
+        width: @pageSwitchHeight;
+        margin: @smallGap;
+
+        font-size: @pageSwitchHeight - @mediumGap; // svg-size
+        text-align: center;
+        line-height: @pageSwitchHeight + @smallGap;
+
+        color: @lightGrey;
+        background-color: @darkGrey;
+        border-radius: 50%;
+
+        &--active {
+            color: @darkGrey;
+            background-color: @lightGrey;
+        }
+    }
+}
