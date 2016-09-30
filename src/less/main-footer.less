@@ -1,0 +1,27 @@
+.main-footer {
+    height: @mainFooterHeight;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+
+    background-color: @white;
+
+    &__navigation {
+        height: 100%;
+        width: @mainFooterNavWidth;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__item {
+        padding-top: 4px; // adjust to svg height
+
+        line-height: @mainFooterHeight - @mediumGap;
+        font-size: @mainFooterHeight - @mediumGap; // svg-size
+
+        color: @darkGrey;
+    }
+}

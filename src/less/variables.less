@@ -3,13 +3,17 @@
 @mediumGap: 2 * @smallGap; // 16px
 @bigGap: 4 * @smallGap; // 32px
 
-@mainHeaderHeight: 2 * @bigGap;
-@pageSwitchHeight: @mainHeaderHeight - @mediumGap;
+@mainHeaderHeight: 2 * @bigGap; // 64px
+@mainHeaderOpenHeight: 4 * @bigGap; // 128px
+@pageSwitchHeight: @mainHeaderHeight - @mediumGap; // 48px
 
 @teaserHeight: @bigGap + @smallGap; // 40px
 @teaserOpenWidth: 4 * @bigGap + @mediumGap; // 144px;
 
 @contentMinHeight: 3 * @bigGap; // 96px;
+
+@mainFooterHeight: @bigGap + @mediumGap; // 48px
+@mainFooterNavWidth: 8 * @bigGap; // 256px
 
 // COLORS
 @lightGrey: rgb(248, 248, 248);
@@ -19,6 +23,9 @@
 @darkRed: rgb(111, 16, 16);
 
 @focusColor: @darkRed;
+
+// FONT SIZES
+@mainHeaderTitle: 32px;
 
 // MISC
 @focusProps: ~"@{focusColor} auto 2px";

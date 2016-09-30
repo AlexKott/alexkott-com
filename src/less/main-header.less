@@ -1,7 +1,25 @@
 .main-header {
     width: 100%;
     height: @mainHeaderHeight;
-    padding: @smallGap 0;
+    position: relative; // for page switch
 
     background-color: @white;
+
+    transition: height @transitionProps;
+
+    &--open {
+        height: @mainHeaderOpenHeight;
+    }
+
+    &__title {
+        height: @mainHeaderHeight;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        line-height: @mainHeaderHeight;
+        text-align: center;
+        font-size: @mainHeaderTitle;
+        font-weight: 300;
+    }
 }

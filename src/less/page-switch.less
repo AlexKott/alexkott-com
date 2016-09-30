@@ -8,7 +8,23 @@
 
     background-color: @white;
 
+    transition: margin-top @transitionProps;
+
+    .main-header:not(.main-header--open) & {
+        margin-top: -@mainHeaderHeight;
+    }
+
     &__item {
+        position: absolute;
+        top: @mainHeaderHeight;
+
+        &:first-child {
+            left: 30%;
+        }
+        &:last-child {
+            right: 30%;
+        }
+
         height: @pageSwitchHeight;
         width: @pageSwitchHeight;
         margin: @smallGap;
@@ -21,9 +37,29 @@
         background-color: @darkGrey;
         border-radius: 50%;
 
+        transition: all @transitionProps;
+
         &--active {
             color: @darkGrey;
             background-color: @lightGrey;
+        }
+
+        .main-header:not(.main-header--open) & {
+            height: @pageSwitchHeight - @mediumGap;
+            width: @pageSwitchHeight - @mediumGap;
+            margin: @mediumGap;
+            
+            font-size: @pageSwitchHeight - @bigGap;
+            line-height: @pageSwitchHeight - @smallGap - 4px; // adjust to svg size
+
+            &:first-child {
+                top: 0;
+                left: 0;
+            }
+            &:last-child {
+                top: 0;
+                right: 0;
+            }
         }
     }
 }
