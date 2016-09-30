@@ -1,3 +1,7 @@
-const x = 3;
-const y = x + 3;
-const z = y * x;
+import ListToggle from './list-toggle';
+
+const listToggle = new ListToggle();
+
+document.addEventListener('DOMContentLoaded', () => {
+    listToggle.init();
+});
