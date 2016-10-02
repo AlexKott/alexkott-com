@@ -1,10 +1,14 @@
+// Currently only working with two switches //
+
+import switchPages from './switch-pages';
+
 let sPageSwitch;
 
 class PageSwitch {
     constructor() {
         if (!sPageSwitch) {
             this.pageSwitches = [];
-            this.pages = {};
+            this.pages = [];
             sPageSwitch = this;
         }
         return sPageSwitch;
@@ -21,8 +25,8 @@ class PageSwitch {
         }
 
         this.pageSwitches.forEach((pSwitch) => {
-            const pageId = pSwitch.dataset.pageId;
-            const switchPage = document.querySelector(`#${pageId}`);
+            const pageId = parseInt(pSwitch.dataset.pageId, 10);
+            const switchPage = document.querySelector(`#page-${pageId}`);
             this.pages[pageId] = switchPage;
 
             pSwitch.addEventListener('click', this.activatePageSwitch.bind(this));
@@ -30,11 +34,19 @@ class PageSwitch {
     }
     activatePageSwitch(event) {
         const switchItem = event.currentTarget;
-        const pageId = switchItem.dataset.pageId;
+        const activeItem = document.querySelector('.page-switch__item--active');
+        const pageId = parseInt(switchItem.dataset.pageId, 10);
 
-        // TODO: shift pages
+        const onPage = this.pages[pageId];
+        const offPage = pageId === 1 ? this.pages[0] : this.pages[1];
 
-    };
+        if (activeItem) {
+            activeItem.classList.remove('page-switch__item--active');
+        }
+        switchItem.classList.add('page-switch__item--active');
+
+        switchPages(onPage, offPage, pageId);
+    }
 }
 
 export default PageSwitch;

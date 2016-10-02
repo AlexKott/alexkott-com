@@ -1,37 +1,26 @@
 .page-switch {
-    height: @pageSwitchHeight + @mediumGap;
-    width: 100%;
-    padding: @smallGap 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: @white;
-
-    transition: margin-top @transitionProps;
-
-    .main-header:not(.main-header--open) & {
-        margin-top: -@mainHeaderHeight;
-    }
+    margin-top: -@mainHeaderHeight;
 
     &__item {
         position: absolute;
-        top: @mainHeaderHeight;
+
+        height: @pageSwitchHeight - @mediumGap;
+        width: @pageSwitchHeight - @mediumGap;
+        margin: @mediumGap;
+
+        text-align: center;
+        font-size: @pageSwitchHeight - @bigGap;
+        line-height: @pageSwitchHeight - @mediumGap;
 
         &:first-child {
-            left: 30%;
+            top: 0;
+            left: 0;
         }
         &:last-child {
-            right: 30%;
+            top: 0;
+            right: 0;
         }
 
-        height: @pageSwitchHeight;
-        width: @pageSwitchHeight;
-        margin: @smallGap;
-
-        font-size: @pageSwitchHeight - @mediumGap; // svg-size
-        text-align: center;
-        line-height: @pageSwitchHeight + 4px; // adjust to svg size
 
         color: @lightGrey;
         background-color: @darkGrey;
@@ -42,24 +31,6 @@
         &--active {
             color: @darkGrey;
             background-color: @lightGrey;
-        }
-
-        .main-header:not(.main-header--open) & {
-            height: @pageSwitchHeight - @mediumGap;
-            width: @pageSwitchHeight - @mediumGap;
-            margin: @mediumGap;
-
-            font-size: @pageSwitchHeight - @bigGap;
-            line-height: @pageSwitchHeight - @mediumGap;
-
-            &:first-child {
-                top: 0;
-                left: 0;
-            }
-            &:last-child {
-                top: 0;
-                right: 0;
-            }
         }
     }
 }

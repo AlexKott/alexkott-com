@@ -1,0 +1,9 @@
+@import 'variables';
+
+.main-wrapper {
+    position: relative; // for the pages
+    width: 100vw;
+    height: ~"calc(100% - @{mainHeaderHeight} - @{mainFooterHeight})";
+    margin-top: @mainHeaderHeight;
+    overflow-x: hidden;
+}

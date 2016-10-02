@@ -1,15 +1,11 @@
 .main-header {
-    width: 100%;
+    width: 100vw;
     height: @mainHeaderHeight;
-    position: relative; // for page switch
+    position: fixed;
+    top: 0;
+    z-index: 100;
 
     background-color: @white;
-
-    transition: height @transitionProps;
-
-    &--open {
-        height: @mainHeaderOpenHeight;
-    }
 
     &__title {
         height: @mainHeaderHeight;

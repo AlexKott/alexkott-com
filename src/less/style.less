@@ -1,9 +1,9 @@
 @import 'variables';
 @import 'normalize';
 @import 'icon';
-@import 'layout';
 
 @import 'main-header';
+@import 'main-wrapper';
 @import 'main-list';
 @import 'main-footer';
 
@@ -13,7 +13,8 @@
 
 html, body {
     width: 100%;
-    position: relative; // for footer
+    height: 100%;
+    overflow: hidden;
 
     background-color: @lightGrey;
     font-family: 'Open Sans';
