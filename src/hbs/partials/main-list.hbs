@@ -1,7 +1,5 @@
 <section class="main-list {{ternary isActive 'main-list--active' ''}}" id={{pageId}}>
-    {{>list-item}}
-    {{>list-item}}
-    {{>list-item}}
-    {{>list-item}}
-    {{>list-item}}
+    {{#each content}}
+        {{>list-item title=title text=text}}
+    {{/each}}
 </section>

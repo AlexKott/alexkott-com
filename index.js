@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const helpers = require('./src/js/hbs-helpers.js');
+const story = require('./content/story.json');
+const about = require('./content/about.json');
 
 const config = {
     PORT: 8080,
@@ -29,7 +31,7 @@ app.get('*', (req, res, next) => {
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-    res.render('main');
+    res.render('main', { story, about });
 });
 
 app.listen(config.PORT, () => {
