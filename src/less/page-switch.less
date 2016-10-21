@@ -28,11 +28,14 @@
         background-color: @darkGrey;
         border-radius: 50%;
 
-        transition: all @transitionProps;
+        transition: color @transitionProps, background-color @transitionProps;
 
         &--active {
             color: @darkGrey;
             background-color: @lightGrey;
+        }
+        &:focus {
+            outline: @focusProps;
         }
     }
 }
