@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+const helpers = require('./src/js/hbs-helpers.js');
 
 const config = {
     PORT: 8080,
@@ -11,6 +12,7 @@ const hbs = exphbs.create({
     layoutsDir: './src/hbs',
     partialsDir: './src/hbs/partials',
     defaultLayout: 'index',
+    helpers: helpers,
 });
 
 app.engine('.hbs', hbs.engine);
