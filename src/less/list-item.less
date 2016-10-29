@@ -5,6 +5,10 @@
     padding: 0 @mediumGap;
     margin-bottom: @bigGap;
 
+    @media @mqMedium {
+        margin-bottom: @bigGap + @mediumGap;
+    }
+
     &__teaser {
         position: relative;
         z-index: 20;
@@ -17,6 +21,7 @@
 
         background-color: @darkGrey;
 
+        font-size: 16px;
         line-height: @teaserHeight;
         text-align: left;
         color: @white;
@@ -31,6 +36,13 @@
         }
         .list-item--open & {
             width: @teaserOpenWidth;
+        }
+
+        @media @mqMedium {
+            padding: 0 @mediumGap;
+            .list-item--open & {
+                width: @teaserOpenWidthLarge;
+            }
         }
     }
     &__container {
