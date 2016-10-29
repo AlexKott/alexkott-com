@@ -16,9 +16,9 @@ const autoprefix = new LessAutoprefix({ remove: false, browsers: ['>5%'] });
 const livereload = require('gulp-livereload');
 /********************/
 
-gulp.task('default', ['browserify', 'lint', 'less']);
+gulp.task('default', ['copy', 'browserify', 'lint', 'less']);
 
-gulp.task('w', ['browserify', 'lint', 'less'], () => {
+gulp.task('w', ['copy', 'browserify', 'lint', 'less'], () => {
     livereload.listen();
     gulp.watch('src/js/**/**/*.js', ['browserify', 'lint']);
     gulp.watch('src/less/**/*.less', ['less']);
@@ -51,6 +51,11 @@ gulp.task('less', () => {
         }))
         .pipe(gulp.dest('./dist'))
         .pipe(livereload());
+});
+
+gulp.task('copy', () => {
+    return gulp.src('assets/**/*')
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('livereload', () => {
