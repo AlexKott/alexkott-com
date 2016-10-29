@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+const minifyHTML = require('express-minify-html');
+const compression = require('compression');
 const helpers = require('./src/js/hbs-helpers.js');
 const story = require('./content/story.json');
 const about = require('./content/about.json');
 
 const config = {
     PORT: 8080,
-}
+    env: process.env.NODE_ENV
+};
 
 const hbs = exphbs.create({
     extname: '.hbs',
@@ -27,6 +30,20 @@ app.get('*', (req, res, next) => {
     }
     return next();
 });
+
+if (config.env === 'production') {
+    app.use(compression());
+
+    app.use(minifyHTML({
+        htmlMinifier: {
+            removeComments:            true,
+            collapseWhitespace:        true,
+            collapseBooleanAttributes: true,
+            removeAttributeQuotes:     true,
+            removeEmptyAttributes:     true
+        }
+    }));
+}
 
 app.use(express.static('dist'));
 

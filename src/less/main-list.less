@@ -4,13 +4,17 @@
     top: @mediumGap;
     width: 100%;
     padding: 0 @mediumGap;
+    
     &--active {
         display: block;
     }
+
     @media @mqMedium {
         display: block;
         width: 50%;
         max-width: @mainListMaxWidth;
+        top: @bigGap;
+
         &:first-child {
             right: 50%;
             left: auto !important;

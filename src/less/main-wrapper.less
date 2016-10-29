@@ -1,9 +1,11 @@
 @import 'variables';
 
+@wrapperHeight: @mainHeaderHeight - @mainFooterHeight;
+
 .main-wrapper {
     position: relative; // for the pages
     width: 100vw;
-    height: ~"calc(100% - @{mainHeaderHeight} - @{mainFooterHeight})";
+    height: ~"calc(100% - @{wrapperHeight})";
     margin: @mainHeaderHeight auto 0;
     overflow-x: hidden;
 }

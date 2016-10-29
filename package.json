@@ -5,27 +5,30 @@
   "author": "Alex Kott",
   "license": "ISC",
   "scripts": {
-    "start": "NODE_ENV='production' node index.js"
+    "start": "export NODE_ENV=production; gulp && node index.js"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.14.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.1.0",
-    "eslint-config-airbnb-base": "^7.1.0",
-    "eslint-plugin-import": "^1.15.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-less": "^3.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0",
-    "less-plugin-autoprefix": "^1.5.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-plugin-import": "1.15.0",
+    "gulp-eslint": "3.0.1",
+    "gulp-livereload": "3.8.1",
+    "gulp-sourcemaps": "1.6.0"
   },
   "dependencies": {
-    "es6-promise": "^4.0.5",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "babel-preset-es2015": "6.14.0",
+    "babelify": "7.3.0",
+    "browserify": "13.1.0",
+    "compression": "1.6.2",
+    "es6-promise": "4.0.5",
+    "express": "4.14.0",
+    "express-handlebars": "3.0.0",
+    "express-minify-html": "0.6.0",
+    "gulp": "3.9.1",
+    "gulp-cssnano": "2.1.2",
+    "gulp-if": "2.0.1",
+    "gulp-less": "3.1.0",
+    "gulp-uglify": "2.0.0",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
   }
 }
