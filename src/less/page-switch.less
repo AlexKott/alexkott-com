@@ -1,7 +1,11 @@
 .page-switch {
     margin: -@mainHeaderHeight auto 0;
-    max-width: @mainWrapperMaxWidth;
+    max-width: @mainListMaxWidth;
     position: relative;
+
+    @media @mqMedium {
+        display: none;
+    }
 
     &__item {
         position: absolute;

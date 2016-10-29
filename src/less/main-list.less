@@ -7,4 +7,15 @@
     &--active {
         display: block;
     }
+    @media @mqMedium {
+        display: block;
+        width: 50%;
+        max-width: @mainListMaxWidth;
+        &:first-child {
+            right: 50%;
+        }
+        &:last-child {
+            left: 50%;
+        }
+    }
 }
