@@ -1,12 +1,27 @@
 .main-list {
     display: none;
     position: absolute;
-    top: @mediumGap;
+    top: 0;
     width: 100%;
-    padding: 0 @mediumGap;
-    
+    height: 100%;
+    padding: @mediumGap @mediumGap 0;
+    overflow-y: auto;
+    transform: translate(0, 0);
+
     &--active {
         display: block;
+    }
+    &--animate-in-right {
+        animation: move-in-right @transitionProps;
+    }
+    &--animate-in-left {
+        animation: move-in-left @transitionProps;
+    }
+    &--animate-out-right {
+        animation: move-out-right @transitionProps;
+    }
+    &--animate-out-left {
+        animation: move-out-left @transitionProps;
     }
 
     @media @mqMedium {
