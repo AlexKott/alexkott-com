@@ -11,17 +11,25 @@
     &--active {
         display: block;
     }
-    &--animate-in-right {
-        animation: move-in-right @transitionProps;
+    &--left {
+        &.js--animate {
+            &-in {
+                animation: move-in-left @transitionProps;
+            }
+            &-out {
+                animation: move-out-right @transitionProps;
+            }
+        }
     }
-    &--animate-in-left {
-        animation: move-in-left @transitionProps;
-    }
-    &--animate-out-right {
-        animation: move-out-right @transitionProps;
-    }
-    &--animate-out-left {
-        animation: move-out-left @transitionProps;
+    &--right {
+        &.js--animate {
+            &-in {
+                animation: move-in-right @transitionProps;
+            }
+            &-out {
+                animation: move-out-left @transitionProps;
+            }
+        }
     }
 
     @media @mqMedium {
@@ -29,10 +37,10 @@
         width: 50%;
         max-width: @mainListMaxWidth;
 
-        &:first-child {
+        &.main-list--left {
             right: 50%;
         }
-        &:last-child {
+        &.main-list--left {
             left: 50%;
         }
     }

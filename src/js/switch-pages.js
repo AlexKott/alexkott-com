@@ -3,15 +3,13 @@ export default function switchPages(onPage, offPage, onPageId) {
         return;
     }
 
-    const direction = onPageId === 0 ? 'right' : 'left';
-
     // multiple adds because IE only uses first argument
     onPage.classList.add('main-list--active');
-    onPage.classList.add(`main-list--animate-in-${direction}`);
-    offPage.classList.add(`main-list--animate-out-${direction}`);
+    onPage.classList.add(`js--animate-in`);
+    offPage.classList.add(`js--animate-out`);
     setTimeout(() => {
         offPage.classList.remove('main-list--active');
-        offPage.classList.remove(`main-list--animate-out-${direction}`);
-        onPage.classList.remove(`main-list--animate-in-${direction}`);
+        offPage.classList.remove(`js--animate-out`);
+        onPage.classList.remove(`js--animate-in`);
     }, 600);
 }

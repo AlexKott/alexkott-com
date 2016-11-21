@@ -6,16 +6,17 @@
         transform: translate(@endVal, 0);
     }
 }
-
-@keyframes move-in-right {
-    .moveMixin(-100%, 0);
-}
-@keyframes move-in-left {
-    .moveMixin(100%, 0);
-}
-@keyframes move-out-right {
-    .moveMixin(0, 100%);
-}
-@keyframes move-out-left {
-    .moveMixin(0, -100%);
+@media @mqMediumMax {
+    @keyframes move-in-right {
+        .moveMixin(-100%, 0);
+    }
+    @keyframes move-in-left {
+        .moveMixin(100%, 0);
+    }
+    @keyframes move-out-right {
+        .moveMixin(0, 100%);
+    }
+    @keyframes move-out-left {
+        .moveMixin(0, -100%);
+    }
 }

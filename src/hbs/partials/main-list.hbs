@@ -1,4 +1,4 @@
-<section class="main-list {{ternary isActive 'main-list--active' ''}}" id={{pageId}}>
+<section class="main-list main-list--{{position}} {{ternary isActive 'main-list--active' ''}}" id={{pageId}}>
     {{#each content}}
         {{>list-item title=title text=text}}
     {{/each}}
