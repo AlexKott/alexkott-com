@@ -45,7 +45,7 @@ class PageSwitch {
         }
         switchItem.classList.add('page-switch__item--active');
 
-        switchPages(onPage, offPage, pageId);
+        switchPages(onPage, offPage);
     }
 }
 

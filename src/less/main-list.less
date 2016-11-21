@@ -14,20 +14,20 @@
     &--left {
         &.js--animate {
             &-in {
-                animation: move-in-left @transitionProps;
+                animation: move-in-right @transitionPropsSlower;
             }
             &-out {
-                animation: move-out-right @transitionProps;
+                animation: move-out-left @transitionPropsSlower;
             }
         }
     }
     &--right {
         &.js--animate {
             &-in {
-                animation: move-in-right @transitionProps;
+                animation: move-in-left @transitionPropsSlower;
             }
             &-out {
-                animation: move-out-left @transitionProps;
+                animation: move-out-right @transitionPropsSlower;
             }
         }
     }
@@ -37,11 +37,32 @@
         width: 50%;
         max-width: @mainListMaxWidth;
 
+        opacity: @hiddenOpac;
+        z-index: 1;
+        pointer-events: none;
+
         &.main-list--left {
             right: 50%;
+            transform: translate(20%) scale(.85);
         }
-        &.main-list--left {
+        &.main-list--right {
             left: 50%;
+            transform: translate(-20%) scale(.85);
+        }
+
+        &--active {
+            opacity: 1;
+            z-index: 2;
+            pointer-events: all;
+
+            &.main-list--left {
+                right: 50%;
+                transform: translate(50%, 0) scale(1);
+            }
+            &.main-list--right {
+                left: 50%;
+                transform: translate(-50%, 0) scale(1);
+            }
         }
     }
 }
