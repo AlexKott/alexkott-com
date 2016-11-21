@@ -8,4 +8,12 @@
     height: ~"calc(100% - @{headerFooterHeight})";
     margin: @mainHeaderHeight auto 0;
     overflow: hidden;
+
+    /*  TODO
+        This isn't optimal since shorter content can be
+        over the viewport on page switch.
+    */
+    @media @mqMedium {
+        overflow: auto;
+    }
 }
