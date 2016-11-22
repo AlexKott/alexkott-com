@@ -5,11 +5,11 @@ export default function switchPages(onPage, offPage) {
 
     // multiple adds because IE only uses first argument
     onPage.classList.add('main-list--active');
-    onPage.classList.add('js--animate-in');
-    offPage.classList.add('js--animate-out');
+    offPage.classList.remove('main-list--active');
+    onPage.classList.add('main-list--parallel');
+    offPage.classList.add('main-list--parallel');
     setTimeout(() => {
-        offPage.classList.remove('main-list--active');
-        offPage.classList.remove('js--animate-out');
-        onPage.classList.remove('js--animate-in');
-    }, 900);
+        onPage.classList.remove('main-list--parallel');
+        offPage.classList.remove('main-list--parallel');
+    }, 300);
 }

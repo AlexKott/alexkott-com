@@ -1,68 +1,61 @@
 .main-list {
-    display: none;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     padding: @mediumGap @mediumGap 0;
     overflow-y: auto;
-    transform: translate(0, 0);
+    pointer-events: none;
+    visibility: hidden;
+    transition: transform @transitionProps, visibility @transitionProps;
 
-    &--active {
-        display: block;
-    }
     &--left {
-        &.js--animate {
-            &-in {
-                animation: move-in-right @transitionPropsSlower;
-            }
-            &-out {
-                animation: move-out-left @transitionPropsSlower;
-            }
-        }
+        left: 0;
+        transform: translate(-100%);
     }
     &--right {
-        &.js--animate {
-            &-in {
-                animation: move-in-left @transitionPropsSlower;
-            }
-            &-out {
-                animation: move-out-right @transitionPropsSlower;
-            }
-        }
+        right: 0;
+        transform: translate(100%);
+    }
+    &--active {
+        transform: translate(0);
+        visibility: visible;
+        pointer-events: all;
     }
 
     @media @mqMedium {
-        display: block;
         width: 50%;
         height: auto; // TODO: fix scrolling behaviour (see main-wrapper)
         max-width: @mainListMaxWidth;
 
+        visibility: visible;
         opacity: @hiddenOpac;
         z-index: 1;
-        pointer-events: none;
+        transition: transform @transitionProps, opacity @transitionProps;
 
-        &.main-list--left {
-            right: 50%;
-            transform: translate(20%) scale(.85);
+        &--left {
+            left: 50%;
+            transform: translate(-80%) scale(.85);
+            &.main-list--parallel {
+                transform: translate(-110%) scale(.9) !important;
+            }
         }
-        &.main-list--right {
+        &--right {
             left: 50%;
             transform: translate(-20%) scale(.85);
+            &.main-list--parallel {
+                transform: translate(10%) scale(.9) !important;
+            }
         }
 
         &--active {
             opacity: 1;
             z-index: 2;
-            pointer-events: all;
-
             &.main-list--left {
-                right: 50%;
-                transform: translate(50%, 0) scale(1);
+                transform: translate(-50%) scale(1);
             }
             &.main-list--right {
-                left: 50%;
-                transform: translate(-50%, 0) scale(1);
+                transform: translate(-50%) scale(1);
             }
         }
     }
