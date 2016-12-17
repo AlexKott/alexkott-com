@@ -3,6 +3,11 @@
     max-width: @mainListMaxWidth;
     position: relative;
 
+    @media @mqLarge {
+        margin: (-@mainHeaderHeight * @modifierLarge) auto 0;
+        max-width: @mainListMaxWidth * @modifierLarge;
+    }
+
     &__item {
         position: absolute;
 
@@ -36,6 +41,13 @@
         }
         &:focus {
             outline: @focusProps;
+        }
+        @media @mqLarge {
+            height: (@pageSwitchHeight - @mediumGap) * @modifierLarge;
+            width: (@pageSwitchHeight - @mediumGap) * @modifierLarge;
+            margin: @mediumGap * @modifierLarge;
+            font-size: (@pageSwitchHeight - @bigGap) * @modifierLarge;
+            line-height: (@pageSwitchHeight - @mediumGap) * @modifierLarge;
         }
     }
 }

@@ -8,6 +8,10 @@
     background-color: @white;
     box-shadow: 0 0 3px 0 @mediumGrey;
 
+    @media @mqLarge {
+        height: @mainHeaderHeight * @modifierLarge;
+    }
+
     &__title {
         height: @mainHeaderHeight;
         width: 100%;
@@ -18,5 +22,11 @@
         text-align: center;
         font-size: @mainHeaderTitle;
         font-weight: 300;
+
+        @media @mqLarge {
+            height: @mainHeaderHeight * @modifierLarge;
+            line-height: @mainHeaderHeight * @modifierLarge;
+            @font-size: @mainHeaderTitle * @modifierLarge;
+        }
     }
 }

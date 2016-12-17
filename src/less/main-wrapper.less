@@ -1,6 +1,7 @@
 @import 'variables';
 
 @headerFooterHeight: @mainHeaderHeight + @mainFooterHeight;
+@headerFooterHeightLarge: @headerFooterHeight * @modifierLarge;
 
 .main-wrapper {
     position: relative; // for the pages
@@ -11,9 +12,13 @@
 
     /*  TODO
         This isn't optimal since shorter content can be
-        over the viewport on page switch.
+        over (scrollTop) the viewport on page switch.
     */
     @media @mqMedium {
         overflow: auto;
+    }
+    @media @mqLarge {
+        height: ~"calc(100% - @{headerFooterHeightLarge})";
+        margin: (@mainHeaderHeight * @modifierLarge) auto 0;
     }
 }

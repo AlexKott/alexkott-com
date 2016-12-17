@@ -1,6 +1,6 @@
 <section class="list-item">
     <button type="button" class="list-item__teaser" aria-label="Open {{title}}">
-        {{title}}<span class="list-item__teaser-year">&nbsp;&ndash;&nbsp;{{year}}</span>
+        {{title}}{{#if year}}<span class="list-item__teaser-year">&nbsp;&ndash;&nbsp;{{year}}</span>{{/if}}
     </button>
     <div class="list-item__container">
         <article class="list-item__content" role="article">{{{text}}}</article>

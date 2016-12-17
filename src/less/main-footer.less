@@ -9,6 +9,10 @@
     background-color: @white;
     box-shadow: 0 0 3px 0 @mediumGrey;
 
+    @media @mqLarge {
+        height: @mainFooterHeight * @modifierLarge;
+    }
+
     &__navigation {
         height: 100%;
         width: @mainFooterNavWidth;
@@ -16,6 +20,10 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+
+        @media @mqLarge {
+            width: @mainFooterNavWidth * @modifierLarge;
+        }
     }
 
     &__item {
@@ -25,6 +33,13 @@
         font-size: @mainFooterHeight - @mediumGap; // svg-size
 
         color: @darkGrey;
+        border: 0;
+
+        @media @mqLarge {
+            padding-top: 4px * @modifierLarge;
+            line-height: (@mainFooterHeight - @mediumGap) * @modifierLarge;
+            font-size: (@mainFooterHeight - @mediumGap) * @modifierLarge;
+        }
 
         &:focus {
             outline: @focusProps;

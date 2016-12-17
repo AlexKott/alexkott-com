@@ -1,0 +1,17 @@
+p, li {
+    line-height: 1.5;
+}
+li {
+    list-style-type: circle;
+    &:not(:last-child) {
+        margin-bottom: @baseUnit;
+        @media @mqLarge {
+            margin-bottom: @baseUnit * @modifierLarge;
+        }
+    }
+}
+a {
+    color: currentColor;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+}

@@ -9,6 +9,11 @@
         margin-bottom: @bigGap + @mediumGap;
     }
 
+    @media @mqLarge {
+        padding: 0 @mediumGap * @modifierLarge;
+        margin-bottom: (@bigGap + @mediumGap) * @modifierLarge;
+    }
+
     &__teaser {
         position: relative;
         z-index: 20;
@@ -21,7 +26,7 @@
 
         background-color: @darkGrey;
 
-        font-size: 16px;
+        font-size: @baseFontSize;
         line-height: @teaserHeight;
         text-align: left;
         color: @white;
@@ -47,6 +52,18 @@
                 width: @teaserOpenWidthLarge;
             }
         }
+        @media @mqLarge {
+            @listItemNewBigGap: @bigGap * @modifierLarge;
+            height: @teaserHeight * @modifierLarge;
+            width: ~"calc(100% + @{listItemNewBigGap})";
+            margin: 0 -@mediumGap * @modifierLarge;
+            padding: 0 @mediumGap * @modifierLarge;
+            font-size: @baseFontSize * @modifierLarge;
+            line-height: @teaserHeight * @modifierLarge;
+            .list-item--open & {
+                width: @teaserOpenWidthLarge * @modifierLarge;
+            }
+        }
     }
     &__container {
         position: relative;
@@ -63,8 +80,23 @@
         .list-item--open & {
             max-height: @listItemOpenMax;
         }
+        @media @mqLarge {
+            margin-top: -1/2 * @teaserHeight * @modifierLarge;
+            .list-item--open & {
+                max-height: @listItemOpenMax * @modifierLarge;
+            }
+        }
     }
     &__content {
         padding: @bigGap @mediumGap @mediumGap;
+        visibility: hidden;;
+
+        .list-item--open & {
+            visibility: visible;
+        }
+
+        @media @mqLarge {
+            padding: (@bigGap * @modifierLarge) (@mediumGap * @modifierLarge) (@mediumGap * @modifierLarge);
+        }
     }
 }

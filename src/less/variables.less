@@ -1,11 +1,17 @@
 // MEDIA QUERIES
 @mediumBreakpoint: 720px;
 @mediumMaxBreakpoint: 719px;
+@largeBreakpoint: 1600px;
 @mqMedium: ~"only screen and (min-width: @{mediumBreakpoint})";
-@mqMediumMax: ~"only screen and (max-width: @{mediumMaxBreakpoint})";
+@mqLarge: ~"only screen and (min-width: @{largeBreakpoint})";
+
+@modifierLarge: 1.2;
 
 // UNITS
-@smallGap: 8px;
+@baseFontSize: 16px;
+
+@baseUnit: 4px;
+@smallGap: 2 * @baseUnit;
 @mediumGap: 2 * @smallGap; // 16px
 @bigGap: 4 * @smallGap; // 32px
 
@@ -14,13 +20,13 @@
 @pageSwitchHeight: @mainHeaderHeight - @mediumGap; // 48px
 
 @teaserHeight: @bigGap + @smallGap; // 40px
-@teaserOpenWidth: 4 * @bigGap + @mediumGap + 4; // 148px;
+@teaserOpenWidth: 5 * @bigGap + 5 * @baseUnit; // 180px;
 @teaserOpenWidthLarge: @teaserOpenWidth + (2 * @bigGap); // 208px;
 
 @contentMinHeight: 3 * @bigGap; // 96px;
 @mainListMaxWidth: 2 * @mainFooterNavWidth; // 512px
 
-@listItemOpenMax: 500px; // opening transition speed
+@listItemOpenMax: 600px; // opening transition speed
 
 @mainFooterHeight: @bigGap + @mediumGap; // 48px
 @mainFooterNavWidth: 8 * @bigGap; // 256px
