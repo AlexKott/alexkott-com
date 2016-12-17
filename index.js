@@ -4,8 +4,8 @@ const exphbs = require('express-handlebars');
 const minifyHTML = require('express-minify-html');
 const compression = require('compression');
 const helpers = require('./src/js/hbs-helpers.js');
-const story = require('./content/story.json');
-const about = require('./content/about.json');
+const story = require('./content/story.js');
+const about = require('./content/about.js');
 
 const config = {
     PORT: 8080,
