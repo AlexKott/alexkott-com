@@ -2,16 +2,18 @@
 
 .list-item {
     width: 100%;
+    min-height: @teaserHeight;
     padding: 0 @mediumGap;
-    margin-bottom: @bigGap;
+    margin-bottom: @mediumGap;
 
     @media @mqMedium {
-        margin-bottom: @bigGap + @mediumGap;
+        margin-bottom: @bigGap;
     }
 
     @media @mqLarge {
+        min-height: @teaserHeight * @modifierLarge;
         padding: 0 @mediumGap * @modifierLarge;
-        margin-bottom: (@bigGap + @mediumGap) * @modifierLarge;
+        margin-bottom: @bigGap * @modifierLarge;
     }
 
     &__teaser {

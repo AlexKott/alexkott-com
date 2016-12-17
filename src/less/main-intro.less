@@ -1,0 +1,34 @@
+.main-intro {
+    display: flex;
+    margin: @mediumGap @mediumGap 0;
+    background-color: @white;
+
+    p {
+        &:first-of-type {
+            margin-top: 0;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        height: 100px;
+        width: 100px;
+        margin-right: @smallGap;
+
+        background-image: url('alexkott.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+
+    @media @mqMedium {
+        max-width: @mainListMaxWidth;
+        margin: @mediumGap auto 0;
+    }
+    @media @mqLarge {
+        max-width: @mainListMaxWidth * @modifierLarge;
+        margin: @mediumGap * @modifierLarge auto;
+    }
+}

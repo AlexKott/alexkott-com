@@ -4,6 +4,7 @@
 @import 'typography';
 
 @import 'main-header';
+@import 'main-intro';
 @import 'main-wrapper';
 @import 'main-list';
 @import 'main-footer';
@@ -19,4 +20,11 @@ html, body {
 
     background-color: @lightGrey;
     font-family: 'Open Sans';
+}
+
+body {
+    padding-top: @mainHeaderHeight;
+    @media @mqLarge {
+        padding-top: @mainHeaderHeight * @modifierLarge;
+    }
 }
