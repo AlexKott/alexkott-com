@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const minifyHTML = require('express-minify-html');
 const compression = require('compression');
 const helpers = require('./src/js/hbs-helpers.js');
+const intro = require('./content/intro.js');
 const story = require('./content/story.js');
 const about = require('./content/about.js');
 
@@ -48,7 +49,7 @@ if (config.env === 'production') {
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-    res.render('main', { story, about });
+    res.render('main', { intro, story, about });
 });
 
 app.listen(config.PORT, () => {

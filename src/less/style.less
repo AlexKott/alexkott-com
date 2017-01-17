@@ -28,3 +28,13 @@ body {
         padding-top: @mainHeaderHeight * @modifierLarge;
     }
 }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: ~"calc(100% - @{mainFooterHeight})";
+    @mainFooterHeightLarge: @mainFooterHeight * @modifierLarge;
+    @media @mqLarge {
+        height: ~"calc(100% - @{mainFooterHeightLarge})";
+    }
+}

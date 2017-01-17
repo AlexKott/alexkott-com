@@ -6,18 +6,11 @@
 .main-wrapper {
     position: relative; // for the pages
     width: 100vw;
-    height: ~"calc(100% - @{headerFooterHeight})";
+    flex-grow: 2;
     margin: 0 auto;
     overflow: hidden;
 
-    /*  TODO
-        This isn't optimal since shorter content can be
-        over (scrollTop) the viewport on page switch.
-    */
     @media @mqMedium {
         overflow: auto;
-    }
-    @media @mqLarge {
-        height: ~"calc(100% - @{headerFooterHeightLarge})";
     }
 }

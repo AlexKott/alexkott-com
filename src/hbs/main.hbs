@@ -2,13 +2,16 @@
     <h1 class="main-header__title">Alex Kott</h1>
     {{>page-switch}}
 </header>
-<article class="main-intro">
-    <div class="main-intro__image"></div>
-    <p>Lorem Ipsum</p>
-</article>
-<main class="main-wrapper" id="main-wrapper" role="main">
-    {{>main-list content=story pageId='page-0' position='left' isActive=true}}
-    {{>main-list content=about pageId='page-1' position='right'}}
+<main class="page">
+    <article class="main-intro">
+        <div class="main-intro__image"></div>
+        <div class="main-intro__text">{{{intro.text}}}</div>
+        <button class="main-intro__button">+</button>
+    </article>
+    <section class="main-wrapper" id="main-wrapper" role="main">
+        {{>main-list content=story pageId='page-0' position='left' isActive=true}}
+        {{>main-list content=about pageId='page-1' position='right'}}
+    </section>
 </main>
 <footer class="main-footer">
     {{>contact-links}}

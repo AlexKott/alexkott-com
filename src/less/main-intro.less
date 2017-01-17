@@ -1,7 +1,20 @@
 .main-intro {
+    position: relative;
     display: flex;
     margin: @mediumGap @mediumGap 0;
     background-color: @white;
+    border-bottom: @mediumGap solid @lightGrey;
+    box-sizing: content-box;
+    max-height: 700px;
+    transition: max-height .3s;
+
+    &--collapsed {
+        max-height: 100px !important;
+        overflow: hidden;
+        .main-intro__text:after {
+            opacity: 1;
+        }
+    }
 
     p {
         &:first-of-type {
@@ -12,9 +25,28 @@
         }
     }
 
+    &__text {
+        position: relative;
+        padding: @mediumGap @smallGap @bigGap;
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            display: block;
+            height: 100px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(transparent, @white);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+    }
+
     &__image {
         height: 100px;
         width: 100px;
+        flex-shrink: 0;
         margin-right: @smallGap;
 
         background-image: url('alexkott.jpg');
@@ -23,8 +55,31 @@
         background-position: top center;
     }
 
+    &__button {
+        position: absolute;
+        z-index: 3;
+        bottom: @baseUnit;
+        right: @baseUnit;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0;
+        background-color: @mediumGrey;
+        color: @white;
+        border-radius: 50%;
+        transform: rotate(45deg);
+        transition: transform .3s;
+        &--closed {
+            transform: rotate(0);
+        }
+        &:focus {
+            outline: @focusProps;
+        }
+    }
+
     @media @mqMedium {
         max-width: @mainListMaxWidth;
+        max-height: 500px;
         margin: @mediumGap auto 0;
     }
     @media @mqLarge {
