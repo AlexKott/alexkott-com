@@ -9,7 +9,7 @@ const story = require('./content/story.js');
 const about = require('./content/about.js');
 
 const config = {
-    PORT: 8080,
+    PORT: process.env.NODE_ENV === 'production' ? 80 : 8080,
     env: process.env.NODE_ENV
 };
 
