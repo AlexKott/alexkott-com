@@ -1,4 +1,6 @@
+const fs = require('fs');
 const express = require('express');
+const subdomain = require('express-subdomain');
 const app = express();
 const exphbs = require('express-handlebars');
 const minifyHTML = require('express-minify-html');
@@ -47,6 +49,13 @@ if (config.env === 'production') {
 }
 
 app.use(express.static('dist'));
+
+if (fs.existsSync('../travel-blog/router.js')) {
+    console.log('Using travel blog router in travel.subdomain.');
+    app.use(subdomain('travel', require('../travel-blog/router.js')));
+} else {
+    console.log('Travel blog not found.');
+}
 
 app.get('/', (req, res) => {
     res.render('main', { intro, story, about });
