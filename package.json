@@ -10,6 +10,7 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.15.0",
+    "express-subdomain": "^1.0.5",
     "gulp-eslint": "3.0.1",
     "gulp-livereload": "3.8.1",
     "gulp-sourcemaps": "1.6.0"
