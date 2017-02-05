@@ -5,7 +5,7 @@
   "author": "Alex Kott",
   "license": "ISC",
   "scripts": {
-    "start": "export NODE_ENV=production; gulp && node index.js"
+    "start": "export NODE_ENV=production && gulp && node index.js"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "7.1.0",
