@@ -8,10 +8,25 @@
     max-height: 700px;
     transition: max-height .3s;
 
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        display: block;
+        height: 100px;
+        width: ~"calc(100% - 100px)";
+        top: 0;
+        right: 0;
+        background: linear-gradient(transparent, @white);
+        opacity: 0;
+        transition: opacity .3s;
+        pointer-events: none;
+    }
+
     &--collapsed {
         max-height: 100px !important;
         overflow: hidden;
-        .main-intro__text:after {
+        &:after {
             opacity: 1;
         }
     }
@@ -28,19 +43,7 @@
     &__text {
         position: relative;
         padding: @mediumGap @smallGap @bigGap;
-        &:after {
-            content: '';
-            position: absolute;
-            z-index: 2;
-            display: block;
-            height: 100px;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(transparent, @white);
-            opacity: 0;
-            transition: opacity .3s;
-        }
+        overflow:auto;
     }
 
     &__image {
@@ -69,6 +72,7 @@
         border-radius: 50%;
         transform: rotate(45deg);
         transition: transform .3s;
+        overflow: hidden;
         &--closed {
             transform: rotate(0);
         }

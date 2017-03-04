@@ -8,7 +8,7 @@ class IntroButton {
         }
         return sIntroButton;
     }
-    init() {
+    init() { // eslint-disable-line
         const toggleButton = document.querySelector('.main-intro__button');
         const mainIntro = document.querySelector('.main-intro');
 
