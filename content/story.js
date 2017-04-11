@@ -1,5 +1,15 @@
 module.exports = [
     {
+        title: 'Freelancer',
+        year: '2016-now',
+        text: `<ul>
+            <li>Focus on JavaScript development (frontend and node.js).</li>
+            <li>Also UI design and development (HTML/CSS).</li>
+            <li>Server administration (Linux) for smaller projects.</li>
+            <li>If you've got an interesting opportunity feel free to drop me a line!</li>
+        </ul>`
+    },
+    {
         title: 'Com Hem',
         year: '2015-2016',
         text: `<ul>
