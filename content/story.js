@@ -1,6 +1,14 @@
 module.exports = [
     {
-        title: 'Freelancer',
+        title: 'Zweitag',
+        year: '2017-now',
+        text: `<ul>
+            <li>Web App development for small and medium sized companies.</li>
+            <li>Focus on React and Redux.</li>
+        </ul>`
+    },
+    {
+        title: 'Startup Incubator / Freelancer',
         year: '2016-now',
         text: `<ul>
             <li>Focus on JavaScript development (frontend and node.js).</li>
